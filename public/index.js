@@ -33,7 +33,6 @@ function getComicStrip() {
             transcript,
             year,
           } = comic;
-          console.dir(comic);
 
           // Write Strip Image
           const comicStripImg = document.querySelector(".comic-strip__image");
@@ -100,6 +99,18 @@ function getComicStrip() {
             .catch((error) => {
               log("Request failed", error);
             });
+        });
+
+        // Increment view count and get it
+        fetch(`/strip/${id}`, {
+          method: "PUT",
+        }).then((response) => {
+          if (response.status === 200) {
+            response.json().then((strip) => {
+              const counterNumber = document.querySelector(".counter__number");
+              counterNumber.textContent = strip.viewCount;
+            });
+          }
         });
       }
     })
