@@ -1,6 +1,3 @@
-1. Whimsical
-2. iconmonstr
-
 # Cyber City Comics Demo
 
 This is a demo project for Stratus360's full stack developer position. I tried to implement it without using any modern web framework. As I was not sure if I could use those fancy tools while working on this task. I mainly used only vanilla javascript and html. I used express.js framework only for routing for deployment and for view counter.
