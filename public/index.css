@@ -138,6 +138,12 @@ footer {
   fill: white;
 }
 
+.btn.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 50%;
+}
+
 /* Medium */
 @media only screen and (max-width: 1007px) {
   .comic-strip {
