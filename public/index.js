@@ -3,7 +3,7 @@ const API_BASE_URL = "https://xkcd.vercel.app/?comic=";
 function getComicStrip() {
   const currentUrl = new URL(document.location);
   const { pathname } = currentUrl;
-  const id = parseInt(pathname.split("/")[1]);
+  let id = parseInt(pathname.split("/")[1]);
 
   let apiUrl;
 
@@ -99,18 +99,19 @@ function getComicStrip() {
             .catch((error) => {
               log("Request failed", error);
             });
-        });
 
-        // Increment view count and get it
-        fetch(`/strip/${id}`, {
-          method: "PUT",
-        }).then((response) => {
-          if (response.status === 200) {
-            response.json().then((strip) => {
-              const counterNumber = document.querySelector(".counter__number");
-              counterNumber.textContent = strip.viewCount;
-            });
-          }
+          // Increment view count and get it
+          fetch(`/strip/${num}`, {
+            method: "PUT",
+          }).then((response) => {
+            if (response.status === 200) {
+              response.json().then((strip) => {
+                const counterNumber =
+                  document.querySelector(".counter__number");
+                counterNumber.textContent = strip.viewCount;
+              });
+            }
+          });
         });
       }
     })
