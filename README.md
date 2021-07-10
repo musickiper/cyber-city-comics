@@ -6,6 +6,8 @@ The code might looks a little bit massy and long because I only used vanilla js 
 
 Thank you :)
 
+(You can browse a specific strip using https://jjung-cyber-city-comis.herokuapp.com/[strip_num])
+
 ## Table of contents
 
 - [Demo](#demo)
